@@ -181,7 +181,7 @@ Consul 使用了go语言书写，提供了微服务系统中的服务治理、�
 
 主要功能：
 
-![image-20210902184010351](C:\Users\Wang\OneDrive\Java全家桶\SpringCloud 学习笔记.assets\image-20210902184010351.png)
+![image-20210902184010351](SpringCloud 学习笔记.assets\image-20210902184010351.png)
 
 
 
@@ -235,9 +235,9 @@ Consul 使用了go语言书写，提供了微服务系统中的服务治理、�
 
 ## 三种注册中心的区别
 
-![image-20210902203301344](C:\Users\Wang\OneDrive\Java全家桶\SpringCloud 学习笔记.assets\image-20210902203301344.png)
+![image-20210902203301344](SpringCloud 学习笔记.assets\image-20210902203301344.png)
 
-![image-20210902203100263](C:\Users\Wang\OneDrive\Java全家桶\SpringCloud 学习笔记.assets\image-20210902203100263.png)
+![image-20210902203100263](SpringCloud 学习笔记.assets\image-20210902203100263.png)
 
 AP:
 
@@ -245,14 +245,14 @@ AP:
 
 结论：违背了一致性C的要求，只满足可用性和分区容错，即AP
 
-![image-20210902203400735](C:\Users\Wang\OneDrive\Java全家桶\SpringCloud 学习笔记.assets\image-20210902203400735.png)
+![image-20210902203400735](SpringCloud 学习笔记.assets\image-20210902203400735.png)
 
 CP:
 
 当网络分区出现后，为了保证一致性，就必须拒接请求，否则无法保证一致性
 结论：违背了可用性A的要求，只满足一致性和分区容错，即CP
 
-![image-20210902203410455](C:\Users\Wang\OneDrive\Java全家桶\SpringCloud 学习笔记.assets\image-20210902203410455.png)
+![image-20210902203410455](SpringCloud 学习笔记.assets\image-20210902203410455.png)
 
 
 
@@ -291,17 +291,17 @@ Ribbon本地负载均衡客户端 VS Nginx服务端负载均衡区别
 
    RestTemplate有两种方法，第一种getForObject返回对象
 
-   ![image-20210903112046405](C:\Users\Wang\OneDrive\Java全家桶\SpringCloud 学习笔记.assets\image-20210903112046405.png)
+   ![image-20210903112046405](SpringCloud 学习笔记.assets\image-20210903112046405.png)
 
    第二种方法getForEntity返回ResponseEntity对象,包含了响应中的一些重要信息，比如响应头、响应状态码、响应体等
 
-   ![image-20210903112051285](C:\Users\Wang\OneDrive\Java全家桶\SpringCloud 学习笔记.assets\image-20210903112051285.png)
+   ![image-20210903112051285](SpringCloud 学习笔记.assets\image-20210903112051285.png)
 
 3. 在RestTemplate里加上@LoadBalanced
 
 ### 2.负载均衡
 
-![image-20210903112407041](C:\Users\Wang\OneDrive\Java全家桶\SpringCloud 学习笔记.assets\image-20210903112407041.png)
+![image-20210903112407041](SpringCloud 学习笔记.assets\image-20210903112407041.png)
 
 
 
@@ -735,13 +735,13 @@ public class PaymentFallbackService implements PaymentFeignClientService
 
 #### 熔断器原理
 
-![image-20210906113650205](C:\Users\Wang\OneDrive\Java全家桶\SpringCloud 学习笔记.assets\image-20210906113650205.png)
+![image-20210906113650205](SpringCloud 学习笔记.assets\image-20210906113650205.png)
 
 
 
-![image-20210906113707956](C:\Users\Wang\OneDrive\Java全家桶\SpringCloud 学习笔记.assets\image-20210906113707956.png)
+![image-20210906113707956](SpringCloud 学习笔记.assets\image-20210906113707956.png)
 
-![image-20210906113943467](C:\Users\Wang\OneDrive\Java全家桶\SpringCloud 学习笔记.assets\image-20210906113943467.png)
+![image-20210906113943467](SpringCloud 学习笔记.assets\image-20210906113943467.png)
 
 
 
@@ -751,7 +751,7 @@ public class PaymentFallbackService implements PaymentFeignClientService
 
 ### 3. Hystrix工作流程
 
-![image-20210906114328398](C:\Users\Wang\OneDrive\Java全家桶\SpringCloud 学习笔记.assets\image-20210906114328398.png)
+![image-20210906114328398](SpringCloud 学习笔记.assets\image-20210906114328398.png)
 
 1	创建 HystrixCommand（用在依赖的服务返回单个操作结果的时候） 或 HystrixObserableCommand（用在依赖的服务返回多个操作结果的时候） 对象。
 
@@ -820,11 +820,11 @@ public class PaymentFallbackService implements PaymentFeignClientService
 
 7. 填写监控地址http://localhost:8001/hystrix.stream
 
-   ![image-20210906115020702](C:\Users\Wang\OneDrive\Java全家桶\SpringCloud 学习笔记.assets\image-20210906115020702.png)
+   ![image-20210906115020702](SpringCloud 学习笔记.assets\image-20210906115020702.png)
 
 8. 查看监控
 
-   ![image-20210906115056950](C:\Users\Wang\OneDrive\Java全家桶\SpringCloud 学习笔记.assets\image-20210906115056950.png)
+   ![image-20210906115056950](SpringCloud 学习笔记.assets\image-20210906115056950.png)
 
 
 
@@ -844,7 +844,7 @@ zuul已经很少使用了
 
 SpringCloud Gateway 使用的Webflux中的reactor-netty响应式编程组件，底层使用了Netty通讯框架,使用非阻塞 API
 
-![image-20210907144819140](C:\Users\Wang\OneDrive\Java全家桶\SpringCloud 学习笔记.assets\image-20210907144819140.png)
+![image-20210907144819140](SpringCloud 学习笔记.assets\image-20210907144819140.png)
 
 Route(路由):  路由是构建网关的基本模块，它由ID，目标URI，一系列的断言和过滤器组成，如果断言为true则匹配该路由
 
@@ -856,7 +856,7 @@ Filter(过滤):  指的是Spring框架中GatewayFilter的实例，使用过滤�
 
 ### 工作流程：
 
-![image-20210907145115531](C:\Users\Wang\OneDrive\Java全家桶\SpringCloud 学习笔记.assets\image-20210907145115531.png)
+![image-20210907145115531](SpringCloud 学习笔记.assets\image-20210907145115531.png)
 
 客户端向 Spring Cloud Gateway 发出请求。然后在 Gateway Handler Mapping 中找到与请求相匹配的路由，将其发送到 Gateway Web Handler。
 
@@ -1104,7 +1104,7 @@ SpringCloud Config为微服务架构中的微服务提供集中化的外部配�
 
 6. 配置读取规则:
 
-   ![image-20210907151421609](C:\Users\Wang\OneDrive\Java全家桶\SpringCloud 学习笔记.assets\image-20210907151421609.png)
+   ![image-20210907151421609](SpringCloud 学习笔记.assets\image-20210907151421609.png)
 
 ## 
 
@@ -1237,11 +1237,11 @@ SpringCloud Config为微服务架构中的微服务提供集中化的外部配�
 
 通过定义绑定器Binder作为中间层，实现了应用程序与消息中间件细节之间的隔离。
 
-![image-20210915200013638](C:\Users\Wang\OneDrive\Java全家桶\SpringCloud 学习笔记.assets\image-20210915200013638.png)
+![image-20210915200013638](SpringCloud 学习笔记.assets\image-20210915200013638.png)
 
 编码API和常用注解:
 
-![image-20210915200615051](C:\Users\Wang\OneDrive\Java全家桶\SpringCloud 学习笔记.assets\image-20210915200615051.png)
+![image-20210915200615051](SpringCloud 学习笔记.assets\image-20210915200615051.png)
 
 
 
@@ -1479,5 +1479,5 @@ SpringCloud Config为微服务架构中的微服务提供集中化的外部配�
 
    在调用法添加resttemplate调用提供者的function，结束之后可以再网站查看调用情况
 
-   ![image-20210915202415266](C:\Users\Wang\OneDrive\Java全家桶\SpringCloud 学习笔记.assets\image-20210915202415266.png)
+   ![image-20210915202415266](SpringCloud 学习笔记.assets\image-20210915202415266.png)
 
